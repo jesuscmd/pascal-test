@@ -42,6 +42,7 @@
     top: 0;
     right: -30rem;
     width: 30rem;
+    max-width: 100vw;
     height: 100vh;
     background-color: #151b23;
     color: white;

@@ -8,7 +8,6 @@
 <style>
   .square {
     display: inline-flex;
-    padding: var(--space);
     margin: var(--space);
     padding: var(--space);
     border: 2px solid #fff;
@@ -23,6 +22,15 @@
     cursor: pointer;
     &:hover {
       transform: scale(1.1);
+    }
+    @media (max-width: 768px) {
+      & {
+        min-height: 1.5rem;
+        min-width: 1.5rem;
+        font-size: 100%;
+        margin: var(--space-sm);
+        padding: var(--space-sm);
+      }
     }
   }
 </style>

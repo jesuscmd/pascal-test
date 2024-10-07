@@ -94,6 +94,7 @@
     min-height: calc(100vh - 7rem);
     justify-content: center;
     font-family: var(--font-monospace);
+    overflow: scroll;
   }
   .row {
     display: flex;

@@ -40,12 +40,37 @@
     position: fixed;
     width: calc(100vw - 4rem);
     font-family: var(--font-monospace);
+    @media (max-width: 768px) {
+      & {
+        background: linear-gradient(
+          180deg,
+          rgba(21, 27, 35, 1) 40%,
+          rgba(21, 27, 35, 0) 100%
+        );
+      }
+    }
   }
 
   .brand {
     display: flex;
     align-items: center;
     text-transform: uppercase;
+    margin: 1rem 0;
+    h1 {
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      & {
+        background: linear-gradient(
+          90deg,
+          rgba(21, 27, 35, 1) 40%,
+          rgba(21, 27, 35, 0) 100%
+        );
+        h1 {
+          display: none;
+        }
+      }
+    }
   }
 
   img {

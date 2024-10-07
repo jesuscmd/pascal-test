@@ -11,6 +11,8 @@
   --color-theme-2: #4075a6; */
   --color-text: rgba(255, 255, 255, 0.9);
   --space: 0.5rem;
+  --space-sm: 0.25rem;
+
   font-family: var(--font-body);
   color: var(--color-text);
 }
