@@ -5,14 +5,12 @@
   let numRows = 7;
   let isSidebarOpen = false;
 
-  // Función para manejar el cambio de tamaño
   const changeSize = (value: number) => {
     if (value >= 1 && value <= 15) {
       numRows = value;
     }
   };
 
-  // Función para abrir/cerrar el sidebar
   const toggleSidebar = () => {
     isSidebarOpen = !isSidebarOpen;
   };

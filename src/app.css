@@ -10,8 +10,6 @@
   /* --color-theme-1: #ff3e00;
   --color-theme-2: #4075a6; */
   --color-text: rgba(255, 255, 255, 0.9);
-  /* --column-width: 42rem;
-  --column-margin-top: 4rem; */
   --space: 0.5rem;
   font-family: var(--font-body);
   color: var(--color-text);
@@ -25,28 +23,7 @@ body {
   background-attachment: fixed;
   background-color: var(--color-bg);
   color: var(--color-text);
-  background-size: 100vw 100vh;
-  background: linear-gradient(
-    132deg,
-    rgb(0, 0, 0) 11.2%,
-    rgb(16, 37, 60) 51.2%,
-    rgb(36, 45, 57) 98.6%
-  );
-  background-size: 2000% 100%;
-  animation: backgoundGradien 60s ease infinite;
 }
-@keyframes backgoundGradien {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 h1 {
   font-size: 2rem;
   font-weight: 400;

@@ -1,9 +1,8 @@
 <script lang="ts">
   import Square from "./Square.svelte";
 
-  export let numRows: number = 7; // Recibir el número de filas desde el componente padre
+  export let numRows: number = 7;
 
-  // Genera el triángulo de Pascal
   function pascalTriangle(numRows = 0): number[][] {
     let triangle: number[][] = [];
 
@@ -16,7 +15,6 @@
       triangle[i][i] = 1;
     }
 
-    // Reflejar la mitad inferior
     for (let i = numRows - 2; i >= 0; i--) {
       triangle.push([...triangle[i]]);
     }
@@ -24,7 +22,6 @@
     return triangle;
   }
 
-  // Interpolación de colores
   function interpolateColor(
     color1: [number, number, number],
     color2: [number, number, number],
@@ -37,12 +34,10 @@
     return result;
   }
 
-  // Convierte un array de [r, g, b] a una cadena rgb
   function rgbToString([r, g, b]: [number, number, number]): string {
     return `rgb(${r}, ${g}, ${b})`;
   }
 
-  // Obtiene un color interpolado para una fila del triángulo
   function getColorForRow(
     index: number,
     numRows: number,
@@ -64,7 +59,6 @@
     );
   }
 
-  // Declarar el triángulo como una variable reactiva
   $: triangle = pascalTriangle(numRows);
 
   const colors: [number, number, number][] = [
