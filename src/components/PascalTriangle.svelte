@@ -2,6 +2,13 @@
   import Square from "./Square.svelte";
 
   export let numRows: number = 7;
+  export let colors: [number, number, number][] = [
+    [235, 221, 26], // Amarillo
+    [246, 144, 11], // Naranja
+    [223, 7, 0], // Rojo
+    [156, 11, 246], // Púrpura
+    [16, 82, 198], // Azul
+  ];
 
   function pascalTriangle(numRows = 0): number[][] {
     let triangle: number[][] = [];
@@ -60,14 +67,6 @@
   }
 
   $: triangle = pascalTriangle(numRows);
-
-  const colors: [number, number, number][] = [
-    [235, 221, 26], // Amarillo
-    [246, 144, 11], // Naranja
-    [223, 7, 0], // Rojo
-    [156, 11, 246], // Púrpura
-    [16, 82, 198], // Azul
-  ];
 </script>
 
 <div class="pascalTriangle">

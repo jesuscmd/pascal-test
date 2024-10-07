@@ -4,6 +4,13 @@
   import Sidebar from "./Sidebar.svelte";
   let numRows = 7;
   let isSidebarOpen = false;
+  let colors = [
+    [235, 221, 26], // Amarillo
+    [246, 144, 11], // Naranja
+    [223, 7, 0], // Rojo
+    [156, 11, 246], // Púrpura
+    [16, 82, 198], // Azul
+  ];
 
   const changeSize = (value: number) => {
     if (value >= 1 && value <= 15) {
@@ -14,6 +21,11 @@
   const toggleSidebar = () => {
     isSidebarOpen = !isSidebarOpen;
   };
+
+  function handleColorSetSelected(event) {
+    console.log("mo", event.detail);
+    colors = event.detail; // Actualiza los colores cuando se selecciona un nuevo set
+  }
 </script>
 
 <svelte:head>
@@ -28,11 +40,12 @@
   <Sidebar
     {isSidebarOpen}
     {numRows}
+    on:colorSetSelected={handleColorSetSelected}
     on:changeSize={(e) => changeSize(e.detail)}
     on:close={toggleSidebar}
   />
 
-  <PascalTriangle {numRows} />
+  <PascalTriangle {numRows} {colors} />
 </section>
 
 <style>

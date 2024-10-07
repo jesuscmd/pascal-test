@@ -40,15 +40,11 @@
     position: fixed;
     width: calc(100vw - 4rem);
     font-family: var(--font-monospace);
-    @media (max-width: 768px) {
-      & {
-        background: linear-gradient(
-          180deg,
-          rgba(21, 27, 35, 1) 40%,
-          rgba(21, 27, 35, 0) 100%
-        );
-      }
-    }
+    background: linear-gradient(
+      180deg,
+      rgba(21, 27, 35, 1) 50%,
+      rgba(21, 27, 35, 0) 100%
+    );
   }
 
   .brand {

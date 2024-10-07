@@ -6,6 +6,35 @@
 
   const dispatch = createEventDispatcher();
 
+  const colorSets = [
+    [
+      [235, 221, 26], // Amarillo
+      [246, 144, 11], // Naranja
+      [223, 7, 0], // Rojo
+      [156, 11, 246], // Púrpura
+      [16, 82, 198], // Azul
+    ],
+    [
+      [0, 255, 0], // Verde
+      [0, 128, 128], // Verde Oscuro
+      [0, 255, 255], // Cian
+      [0, 0, 255], // Azul
+      [128, 0, 128], // Morado
+    ],
+    [
+      [255, 182, 193], // Rosa
+      [255, 192, 203], // Rosa Claro
+      [255, 0, 0], // Rojo
+      [255, 69, 0], // Naranja
+      [255, 255, 0], // Amarillo
+    ],
+  ];
+
+  function selectColorSet(index: number) {
+    dispatch("colorSetSelected", colorSets[index]);
+    console.log(index);
+  }
+
   const reduceRows = () => {
     if (numRows > 1) {
       dispatch("changeSize", numRows - 1);
@@ -17,17 +46,36 @@
       dispatch("changeSize", numRows + 1);
     }
   };
+
+  function rgbToString([r, g, b]: [number, number, number]): string {
+    return `rgb(${r}, ${g}, ${b})`;
+  }
 </script>
 
 <div class="sidebar" class:is-open={isSidebarOpen}>
   <div class="sidebar-wrapper">
     <button class="close-btn" on:click={() => dispatch("close")}>×</button>
-    <div class="update-size">
+    <div class="config-section update-size">
       <h3 class="config-title">Change Pascal triangle size</h3>
       <div class="controls">
         <button on:click={reduceRows}>-</button>
         <span>{numRows}</span>
         <button on:click={increaseRows}>+</button>
+      </div>
+    </div>
+    <div class="config-section update-size">
+      <div class="color-selector">
+        {#each colorSets as set, index}
+          <div class="color-box" on:click={() => selectColorSet(index)}>
+            <div
+              class="color-sample"
+              style="background: linear-gradient(to right, {rgbToString(
+                set[0]
+              )}, {rgbToString(set[1])}, {rgbToString(set[2])});"
+            ></div>
+            <p>Set {index + 1}</p>
+          </div>
+        {/each}
       </div>
     </div>
   </div>
