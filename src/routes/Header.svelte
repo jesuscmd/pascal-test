@@ -21,7 +21,7 @@
     <a href="https://github.com/jesuscmd/pascal-test" target="_blank">
       {@html gear}
     </a>
-    <a href="https://github.com/jesuscmd/pascal-test" target="_blank">
+    <a href="https://pascal-triangle-test.netlify.app/" target="_blank">
       {@html netlify}
     </a>
     <a on:click={handleToggleSidebar}>
