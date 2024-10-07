@@ -4,7 +4,7 @@
   import Sidebar from "./Sidebar.svelte";
   let numRows = 7;
   let isSidebarOpen = false;
-  let colors = [
+  let colors: [number, number, number][] = [
     [235, 221, 26], // Amarillo
     [246, 144, 11], // Naranja
     [223, 7, 0], // Rojo
@@ -23,7 +23,6 @@
   };
 
   function handleColorSetSelected(event) {
-    console.log("mo", event.detail);
     colors = event.detail; // Actualiza los colores cuando se selecciona un nuevo set
   }
 </script>
